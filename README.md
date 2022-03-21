@@ -9,6 +9,8 @@ In some applications, explicit decision tree paths are useful for non-expert use
 
 In this repository, we provide a simple utility to convert spark decision tree (pyspark.ml.classification.DecisionTreeClassificationModel or pyspark.ml.regression.DecisionTreeRegressionModel) in scala to tree in python and extract decision paths for a given input. It is also useful if you like to port spark tree model into non-spark environment.
 
+This library can be used to extract decision paths for pyspark.ml.classification.{RandomForestClassificationModel, GBTClassificationModel} and pyspark.ml.regression.{RandomForestRegressionModel, GBTRegressionModel}.
+
 Get-started
 --
     1. Create wheel package
