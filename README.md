@@ -26,7 +26,7 @@ Get-started
       predicted_paths = decision_path.extract_decision_tree_paths(python_tree_model, x)
       print_decision_paths(predicted_paths)
 
-      #outputs look like
+      #decison path outputs look like for binary classification ( <=50K, >50K) on [UCI Adult dataset](https://archive.ics.uci.edu/ml/datasets/adult)
 
       feature_name: relationship_index feature_value:  Husband split_value: [" Not-in-family", " Own-child", " Unmarried", " Other-relative"] split: not in
       feature_name: education-num feature_value: 10.0 split_value: 12.5 split: <=
