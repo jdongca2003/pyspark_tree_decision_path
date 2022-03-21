@@ -159,6 +159,12 @@ print(targetIndex_to_name)
 
 # COMMAND ----------
 
+#map categorical_index to category name
+category_original_name_map = {'{}_index'.format(e) : e for e in categorical_cols}
+print(category_original_name_map)
+
+# COMMAND ----------
+
 import json
 
 def print_node(d_node):
@@ -169,21 +175,21 @@ def print_node(d_node):
        feature_index = node.feature_index
        feature_name = index_to_feature_names[feature_index]
        category_values = categorical_feature_values[feature_name]
-       feature_val_cat_name = category_values[int(feature_val)]
+       feature_val_cat_name = category_values[int(feature_val)] 
        values = [category_values[int(idx)] for idx in sorted(list(node.split_value))[:4] ]
        if split_branch == decision_path.TreeBranch.left:
            split_msg = "in"
        else:
            split_msg = "not in" 
        left_category_set_str = json.dumps(values)
-       print(f'feature_name: {feature_name} feature_value: {feature_val_cat_name} split_value: {left_category_set_str} split: {split_msg}')
+       print(f'Feature {category_original_name_map[feature_name]}({feature_val_cat_name}) is {split_msg} {left_category_set_str}')
     elif node.feature_index != None:
        if split_branch == decision_path.TreeBranch.left:
           split_msg = "<="
        else:
           split_msg = ">"
        feature_name = index_to_feature_names[node.feature_index]
-       print(f'feature_name: {feature_name} feature_value: {feature_val} split_value: {node.split_value} split: {split_msg}')
+       print(f'Feature {feature_name}({feature_val}) {split_msg} {node.split_value}')
     else:
        class_idx = int(node.prediction)
        pred_class_name = targetIndex_to_name[class_idx]

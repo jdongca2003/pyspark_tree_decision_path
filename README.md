@@ -27,10 +27,11 @@ Get-started
       print_decision_paths(predicted_paths)
 
       #decison path outputs look like for binary classification ( <=50K, >50K) on [UCI Adult dataset](https://archive.ics.uci.edu/ml/datasets/adult)
+      # feature_col_name(feature_value)
 
-      feature_name: relationship_index feature_value:  Husband split_value: [" Not-in-family", " Own-child", " Unmarried", " Other-relative"] split: not in
-      feature_name: education-num feature_value: 10.0 split_value: 12.5 split: <=
-      feature_name: capital-gain feature_value: 7688.0 split_value: 6808.0 split: >
+      Feature relationship( Husband) is not in [" Not-in-family", " Own-child", " Unmarried", " Other-relative"]
+      Feature education-num(10.0) <= 12.5
+      Feature capital-gain(7688.0) > 6808.0
       Leaf prediction:  >50K
 
       ```
