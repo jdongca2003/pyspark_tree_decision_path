@@ -18,7 +18,7 @@ Get-started
 
     2. Upload the wheel package into databrick cluster
 
-    3. Run the notebook in examples in databricks
+    3. Run the example notebook in databricks
 
       ```
       from pyspark_tree_decision_paths import tree, decision_path
